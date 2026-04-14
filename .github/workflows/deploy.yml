@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [main] # 當您推送到 main 分支時觸發
+    branches: [main]
 permissions:
   contents: write
 jobs:
@@ -24,5 +24,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # 部署編譯後的 dist 資料夾
-          branch: gh-pages # 部署到 gh-pages 分支
+          folder: dist # 確保這裡只部署 dist 資料夾
+          branch: gh-pages
+          clean: true # 部署前清理分支
